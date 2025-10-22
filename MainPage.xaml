@@ -15,22 +15,24 @@
 
         <Label x:Name="ImageText"
                FontSize="18"
-              
                HorizontalOptions="Center" />
 
-        <HorizontalStackLayout Spacing="1" HorizontalOptions="Center">
-            <Button Text="◀" Clicked="PreviousClicked"
-                    
-              
-             />
-            <Button Text=" ▶" Clicked="NextClicked"
-              
-                    
-                    
-                    
-                    />
-            
+        <Button x:Name="FavoriteButton"
+                Text="🤍"
+                FontSize="40"
+                BackgroundColor="Transparent"
+                Clicked="FavoriteClicked"
+                HorizontalOptions="Center" />
+
+        <HorizontalStackLayout Spacing="50" HorizontalOptions="Center">
+            <Button Text="◀" Clicked="PreviousClicked" />
+            <Button Text="▶" Clicked="NextClicked" />
         </HorizontalStackLayout>
+
+        <!-- ✅ New Random Picture button -->
+        <Button Text="🎲 Random Picture"
+                Clicked="RandomClicked"
+                HorizontalOptions="Center" />
 
     </VerticalStackLayout>
 </ContentPage>

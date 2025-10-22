@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGenerator", "ImageGenerator.csproj", "{CE9A9A79-3B89-465E-B09E-0323A0D16C42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGenerator", "ImageGenerator\ImageGenerator.csproj", "{AFF1DC94-923D-42E5-913D-0C092E8BB66E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CE9A9A79-3B89-465E-B09E-0323A0D16C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE9A9A79-3B89-465E-B09E-0323A0D16C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE9A9A79-3B89-465E-B09E-0323A0D16C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE9A9A79-3B89-465E-B09E-0323A0D16C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF1DC94-923D-42E5-913D-0C092E8BB66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF1DC94-923D-42E5-913D-0C092E8BB66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF1DC94-923D-42E5-913D-0C092E8BB66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF1DC94-923D-42E5-913D-0C092E8BB66E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {09EC3314-E33E-4D20-A04F-4C5545E18595}
+		SolutionGuid = {404C5683-19B2-47CC-8127-BAE6E4FB9F22}
 	EndGlobalSection
 EndGlobal
