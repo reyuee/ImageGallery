@@ -9,7 +9,7 @@
             Spacing="25">
 
             <Label
-                Text="Image gallery"
+                Text="Image Gallery"
                 FontSize="26"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
@@ -18,32 +18,34 @@
                 x:Name="ShowGallery"
                 HeightRequest="240"
                 Aspect="AspectFit"
-                SemanticProperties.Description="a randomm image from a gallery" />
+                SemanticProperties.Description="a random image from the gallery" />
 
             <Label
                 x:Name="ImageText"
                 Style="{StaticResource Headline}" />
 
-            <ImageButton x:Name="FavoriteButton"
-                     WidthRequest="40"
-                     HeightRequest="40"
-                     BackgroundColor="Transparent"
-                     Clicked="OnFavoriteClicked"
-                     SemanticProperties.Hint="a heart to highlight a favorite image">
+            <ImageButton
+                x:Name="FavoriteButton"
+                WidthRequest="40"
+                HeightRequest="40"
+                BackgroundColor="Transparent"
+                Clicked="OnFavoriteClicked"
+                SemanticProperties.Hint="a heart to highlight a favorite image">
                 <ImageButton.Source>
-
-                    <FontImageSource Glyph="&#xE87E;"
-                                 FontFamily="MaterialIcons"
-                                 Size="32"
-                                 Color="Gray"/>
+                    <FontImageSource 
+                        Glyph="favorite_border"
+                        FontFamily="MaterialIcons"
+                        Size="32"
+                        Color="Gray"/>
                 </ImageButton.Source>
             </ImageButton>
 
             <Button
                 Text="Visa ny bild" 
-                SemanticProperties.Hint="showes a new image when you click"
+                SemanticProperties.Hint="shows a new image when clicked"
                 Clicked="ImageOnClicked"
                 HorizontalOptions="Fill" />
+
         </VerticalStackLayout>
     </ScrollView>
 

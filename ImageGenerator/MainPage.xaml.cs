@@ -4,11 +4,12 @@ namespace ImageGenerator
 {
     public partial class MainPage : ContentPage
 
-        private class ImageItem
+
 
     {
-        private class ImageItem { 
-        
+        private class ImageItem
+        {
+
             public string FileName { get; set; }
             public string Title { get; set; }
 
@@ -29,10 +30,10 @@ namespace ImageGenerator
             new ImageItem { FileName = "image10", Title = "Tower" }
 
 
-        }; 
+        };
 
 
-   
+
 
 
 
@@ -54,17 +55,17 @@ namespace ImageGenerator
 
             _currentImageKey = item.FileName;
 
-           string showKey = GetImageFileEnding(item.FileName);
+            string showKey = GetImageFileEnding(item.FileName);
 
             ShowGallery.Source = showKey;
 
             ImageText.Text = item.Title;
 
-            UpdatefavoriteIcon();
+            UpdateFavoriteIcon();
         }
 
 
-       
+
 
         private string GetImageFileEnding(string imageKey)
         {
@@ -75,30 +76,64 @@ namespace ImageGenerator
 #endif
         }
 
+
+        private readonly List<string> _favoriteList = new();
+        private readonly Stack<string> _recentFavorites = new();
+        private string _currentImageKey;
+
         private void OnFavoriteClicked(object sender, EventArgs e)
         {
-            _isFavorite = !_isFavorite;
+            if (string.IsNullOrEmpty(_currentImageKey))
 
-            if (_isFavorite)
+                return;
+
+
+            bool isFavorite = _favoriteList.Contains(_currentImageKey);
+
+            if (isFavorite)
             {
+                _favoriteList.Remove(_currentImageKey);
                 FavoriteButton.Source = new FontImageSource
                 {
-                    Glyph = "\ue87d",
                     FontFamily = "MaterialIcons",
-                    Size = 32,
-                    Color = Colors.Red
-                };
-            }
-            else
-            {
-                FavoriteButton.Source = new FontImageSource
-                {
                     Glyph = "\ue87e",
-                    FontFamily = "MaterialIcons",
                     Size = 32,
                     Color = Colors.Gray
                 };
             }
+            else
+            {
+                _favoriteList.Add(_currentImageKey);
+                _recentFavorites.Push(_currentImageKey);
+                FavoriteButton.Source = new FontImageSource
+                {
+                    FontFamily = "MaterialIcons",
+                    Glyph = "\uf004",
+                    Size = 32,
+                    Color = Colors.Red
+                };
+
+
+
+            }
+             }
+
+            private void UpdateFavoriteIcon()
+            {
+            if(string.IsNullOrEmpty(_currentImageKey))
+                    return;
+
+                bool isFavorite = _favoriteList.Contains(_currentImageKey);
+
+                FavoriteButton.Source = new FontImageSource
+                    {
+
+                    FontFamily = "MaterialIcons",
+                    Glyph = isFavorite ? "\ue87d" : "\ue87e",
+                    Size = 32,
+                    Color = isFavorite ? Colors.Red : Colors.Gray
+
+                };
         }
     }
 }
